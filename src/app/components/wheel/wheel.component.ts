@@ -24,7 +24,10 @@ export class WheelComponent {
   errorMessage: string = '';
 
   spinWheel(): void {
-    if (!this.selectedSector || this.selectedSector < 1 || this.selectedSector > 10) {
+    if (!this.selectedSector ||
+      this.selectedSector < 1 ||
+      this.selectedSector > 10 ||
+      !Number.isInteger(this.selectedSector)) {
       this.showError = true;
       this.errorMessage = 'აღნიშნული სექტორი ვერ მოიძებნა';
       this.result = null;
