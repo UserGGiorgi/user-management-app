@@ -1,0 +1,49 @@
+<div class="wheel-container">
+  <h2>Wheel of Fortune</h2>
+
+  <div class="wheel-section">
+    <div class="wheel-wrapper">
+      <div class="wheel" [class.spinning]="isSpinning" [style.transform]="'rotate(' + rotation + 'deg)'">
+        <div class="wheel-background"></div>
+
+        <div *ngFor="let sector of sectors; let i = index"
+             class="sector-number"
+             [style.transform]="'rotate(' + (i * 36 + 18) + 'deg)'">
+          <span class="number">{{ sector }}</span>
+        </div>
+
+        <div class="wheel-center"></div>
+      </div>
+
+      <div class="wheel-pointer">▼</div>
+    </div>
+
+    <div class="controls">
+      <div class="input-section">
+        <label for="sectorInput">Enter sector number (1-10):</label>
+        <input type="number"
+               id="sectorInput"
+               [(ngModel)]="selectedSector"
+               min="1"
+               max="10"
+               class="sector-input"
+               [class.error]="showError"
+               placeholder="Enter 1-10"
+               [disabled]="isSpinning">
+        <button class="spin-btn"
+                (click)="spinWheel()"
+                [disabled]="isSpinning">
+          {{ isSpinning ? 'Spinning...' : 'Spin Wheel' }}
+        </button>
+      </div>
+
+      <div *ngIf="showError" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="result" class="result-section">
+        <h3 class="winner">🎉 Landed on: Sector {{ result }} 🎉</h3>
+      </div>
+    </div>
+  </div>
+</div>

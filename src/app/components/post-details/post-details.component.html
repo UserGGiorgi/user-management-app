@@ -1,0 +1,21 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Post Details</h2>
+      <button class="close-btn" (click)="onClose()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="post-info">
+        <p><strong>Author:</strong> {{userName}}</p>
+        <p><strong>Title:</strong> {{post?.title}}</p>
+        <p><strong>Description:</strong></p>
+        <div class="post-body">
+          {{post?.body}}
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn close-btn" (click)="onClose()">Close</button>
+    </div>
+  </div>
+</div>

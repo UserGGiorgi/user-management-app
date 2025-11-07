@@ -1,0 +1,66 @@
+<div class="leaderboard-container">
+  <h2>Leaderboard</h2>
+
+  <div class="filter-section">
+    <h3>Filter by Week:</h3>
+    <div class="filter-buttons">
+      <button *ngFor="let week of weekTypes"
+              class="filter-btn"
+              [class.active]="activeFilter === week"
+              (click)="filterByWeek(week)">
+        {{ week }}
+      </button>
+      <button class="filter-btn all-btn"
+              [class.active]="activeFilter === 'ALL'"
+              (click)="filterByWeek('ALL')">
+        ALL
+      </button>
+    </div>
+  </div>
+
+  <div class="leaderboard-content">
+    <div class="leaderboard-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Place</th>
+            <th>Customer ID</th>
+            <th>Login Name</th>
+            <th>Week</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredLeaderboard"
+              [class.top-three]="item.place <= 3"
+              [class.first]="item.place === 1"
+              [class.second]="item.place === 2"
+              [class.third]="item.place === 3">
+            <td class="place-cell">
+              <span class="place-badge" [class.top-badge]="item.place <= 3">
+                {{ item.place }}
+              </span>
+            </td>
+            <td>{{ item.customerId }}</td>
+            <td class="login-name">{{ item.loginName }}</td>
+            <td>
+              <span class="week-badge week-{{ item.week.toLowerCase() }}">
+                {{ item.week }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stats-section">
+      <div class="stat-card">
+        <h4>Total Records</h4>
+        <p class="stat-number">{{ filteredLeaderboard.length }}</p>
+      </div>
+      <div class="stat-card">
+        <h4>Active Filter</h4>
+        <p class="stat-filter">{{ activeFilter }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="actions-container">
+  <h1>Actions</h1>
+
+  <div class="actions-tabs">
+    <button class="tab-btn"
+            [class.active]="activeTab === 'wheel'"
+            (click)="setActiveTab('wheel')">
+      🎡 Wheel
+    </button>
+    <button class="tab-btn"
+            [class.active]="activeTab === 'leaderboard'"
+            (click)="setActiveTab('leaderboard')">
+      🏆 Leaderboard
+    </button>
+  </div>
+
+  <div class="tab-content">
+    <app-wheel *ngIf="activeTab === 'wheel'"></app-wheel>
+    <app-leaderboard *ngIf="activeTab === 'leaderboard'"></app-leaderboard>
+  </div>
+</div>

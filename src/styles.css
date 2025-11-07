@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Main colors */
+  --primary-dark: #00141e;
+  --secondary-dark: #002837;
+  --card-dark: #003543;
+  --border-dark: #004455;
+  /* Accent colors (green like your button) */
+  --accent-green: #189541;
+  --accent-green-light: #20b956;
+  --accent-green-dark: #127a34;
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #a0a0a0;
+  /* Status colors */
+  --success: #189541;
+  --warning: #ff9800;
+  --error: #f44336;
+  --info: #2196f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn-primary {
+  color: var(--text-primary);
+  background-color: rgba(24, 149, 65, 0.2);
+  border: 1px solid var(--accent-green);
+}
+
+  .btn-primary:hover {
+    background-color: rgba(24, 149, 65, 0.35);
+    transform: translateY(-1px);
+  }
+
+.btn-secondary {
+  background: var(--card-dark);
+  color: var(--text-primary);
+  border: 1px solid var(--border-dark);
+}
+
+  .btn-secondary:hover {
+    background: var(--border-dark);
+    transform: translateY(-1px);
+  }
+
+.card {
+  background: var(--card-dark);
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+}
+
+.table-container {
+  background: var(--card-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+}
+
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-container th {
+    background: var(--secondary-dark);
+    color: var(--text-primary);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .table-container td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-dark);
+    color: var(--text-primary);
+  }
+
+  .table-container tr:hover {
+    background: rgba(24, 149, 65, 0.1);
+  }
+
+.form-input {
+  background: var(--secondary-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 2px rgba(24, 149, 65, 0.2);
+  }
+
+  .form-input::placeholder {
+    color: var(--text-muted);
+  }

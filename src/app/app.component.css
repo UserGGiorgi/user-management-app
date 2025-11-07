@@ -1,0 +1,36 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #00141e;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  background-color: #00141e;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  background-color: #00141e;
+}
+
+@media (max-width: 1024px) {
+  .content-area {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+}

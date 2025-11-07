@@ -1,0 +1,30 @@
+<div class="todos-container">
+  <div class="user-info" *ngIf="user">
+    <h2>Todos for {{user.name}}</h2>
+    <p>Email: {{user.email}}</p>
+  </div>
+
+  <div class="todos-list">
+    <div *ngFor="let todo of todos"
+         class="todo-item"
+         [class.completed]="todo.completed">
+      <div class="todo-checkbox">
+        <input type="checkbox"
+               [checked]="todo.completed"
+               disabled>
+      </div>
+      <div class="todo-content">
+        <span class="todo-title">{{todo.title}}</span>
+      </div>
+      <div class="todo-status">
+        <span class="status-badge" [class.completed]="todo.completed">
+          {{todo.completed ? 'Completed' : 'Pending'}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-button">
+    <button class="btn back-btn" (click)="goBack()">Back to Users</button>
+  </div>
+</div>

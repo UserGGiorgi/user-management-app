@@ -1,0 +1,129 @@
+.user-table-container {
+  padding: 20px;
+}
+
+.search-section {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  background: var(--secondary-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 2px rgba(24, 149, 65, 0.2);
+  }
+
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+
+.table-responsive {
+  background: var(--card-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-dark);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+  .user-table th {
+    background: var(--secondary-dark);
+    color: var(--text-primary);
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .user-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-dark);
+    color: var(--text-primary);
+  }
+
+  .user-table tr:hover {
+    background: rgba(24, 149, 65, 0.1);
+  }
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.posts-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-green);
+  background-color: rgba(24, 149, 65, 0.2);
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.todos-btn {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2196f3;
+  background-color: rgba(33, 150, 243, 0.2);
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.posts-btn:hover {
+  background-color: rgba(24, 149, 65, 0.35);
+  transform: translateY(-1px);
+}
+
+.todos-btn:hover {
+  background-color: rgba(33, 150, 243, 0.35);
+  transform: translateY(-1px);
+}
+
+.loading-state,
+.error-state,
+.no-results {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-dark);
+  border-radius: 8px;
+  border: 1px solid var(--border-dark);
+  color: var(--text-primary);
+}
+
+.spinner {
+  border: 3px solid var(--border-dark);
+  border-top: 3px solid var(--accent-green);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

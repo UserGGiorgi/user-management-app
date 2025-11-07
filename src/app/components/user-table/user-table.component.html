@@ -1,0 +1,45 @@
+<div class="user-table-container">
+  <div class="search-section">
+    <input type="text"
+           [(ngModel)]="searchTerm"
+           (input)="filterUsers()"
+           placeholder="Search by name, email or username..."
+           class="search-input">
+  </div>
+
+  <div class="table-responsive">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Company</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.company.name }}</td>
+          <td class="actions">
+            <button class="btn posts-btn"
+                    (click)="viewUserPosts(user.id)"
+                    (mouseenter)="onButtonHover($event)"
+                    (mouseleave)="onButtonLeave($event)">
+              Posts
+            </button>
+            <button class="btn todos-btn"
+                    (click)="viewUserTodos(user.id)">
+              Todos
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
